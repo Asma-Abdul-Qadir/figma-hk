@@ -45,18 +45,8 @@ export default function HeroSection() {
 
         {/* Right Content */}
         <div className="w-full md:w-1/2 h-full relative flex flex-col items-center justify-start">
-          {/* Background 1 - Larger Background Image */}
-          <div
-            className="absolute top-[50px] left-1/2 transform -translate-x-1/2 w-[450px] h-[450px] bg-[url('/images/background1.png')] bg-cover bg-center z-0"
-          ></div>
-
-          {/* Background 2 - Smaller Background Image */}
-          <div
-            className="absolute top-[100px] left-1/2 transform -translate-x-1/2 w-[350px] h-[350px] bg-[url('/images/background2.png')] bg-cover bg-center z-0"
-          ></div>
-
-          {/* Chair Image */}
-          <div className="flex items-center py-10 relative z-10">
+          {/* Chair Image Container */}
+          <div className="relative z-10">
             <Image
               src="/images/chair.png"
               alt="Luxury chair with modern design"
@@ -65,24 +55,22 @@ export default function HeroSection() {
               className="w-full md:w-[760px]"
               priority
             />
+            {/* Blue Discount Badge */}
+            <div
+              className="absolute bottom-1 right-10 bg-[url('/images/vector2.png')] bg-cover bg-center w-[80px] h-[80px] flex flex-col justify-center items-center"
+            >
+              <span className="text-xl font-bold text-white">50%</span>
+              <span className="text-sm font-semibold text-white">OFF</span>
+            </div>
           </div>
-        </div>
-
-        {/* Blue Discount Badge */}
-        <div
-          className="absolute top-[40px] right-[75px] bg-[url('/images/vector2.png')] bg-cover bg-center w-[80px] h-[80px] flex flex-col justify-center items-center z-20"
-        >
-          <span className="text-xl font-bold text-white">50%</span>
-          <span className="text-sm font-semibold text-white">OFF</span>
         </div>
       </div>
 
       <div className="flex gap-1 justify-center items-center cursor-pointer py-10">
-  {Array.from({ length: 3 }, (_, i) => (
-    <Diamond key={i} className="text-[#fb2e86] w-[12px]" />
-  ))}
-</div>
-
+        {Array.from({ length: 3 }, (_, i) => (
+          <Diamond key={i} className="text-[#fb2e86] w-[12px]" />
+        ))}
+      </div>
     </section>
   );
 }

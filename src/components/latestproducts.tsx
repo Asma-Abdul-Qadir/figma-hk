@@ -1,5 +1,4 @@
-'use client';
-
+'use client'
 import Image from 'next/image';
 import { HeartIcon, ShoppingCartIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
@@ -16,16 +15,16 @@ function LatestProducts() {
   return (
     <div className="w-full bg-white py-20">
       {/* Heading */}
-      <h1 className="text-[#1A0B5B] font-josifen text-3xl text-center  font-bold">
-          Leatest Products
-        </h1>
+      <h1 className="text-[#1A0B5B] font-josifen text-3xl text-center font-bold">
+          Latest Products
+      </h1>
 
       {/* Tabs */}
-      <div className="flex justify-center space-x-8 mb-16">
+      <div className="flex justify-center space-x-2 sm:space-x-4 md:space-x-8 mb-16">
         {["New Arrival", "Best Seller", "Featured", "Special Offers"].map((tab) => (
           <button
             key={tab}
-            className="text-[#3F509E] text-lg font-medium relative group hover:text-red-600"
+            className="text-[#3F509E] text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl font-medium relative group hover:text-red-600"
           >
             {tab}
             <span
