@@ -2,6 +2,7 @@
 import HeroSection from "../components/herosection";
 import FeaturedProducts from "../components/featuredproducts";
 import LatestProducts from "../components/latestproducts";
+import OurFeatures from "../components/ourfeatures";
 import TwoSections from "../components/twosections";
 import TrendingProducts from "../components/trendingproducts";
 import DiscountItem from "../components/discountitem";
@@ -19,6 +20,7 @@ export default function Home() {
 <HeroSection/>
 <FeaturedProducts/>
 <LatestProducts/>
+<OurFeatures/>
 <TwoSections/>
 <TrendingProducts/>
 <DiscountItem/>

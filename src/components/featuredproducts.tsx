@@ -1,27 +1,34 @@
 import React from "react";
-import Image from "next/image";
+import Link from "next/link";
+import Image from 'next/image'; // Keep this import
 
-const FeaturedProducts = () => {
+import { HeartIcon, ShoppingCartIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+
+export default function FeaturedProducts() {
   const products = [
     {
+      id: 1,
       name: "Cantilever chair",
       code: "Y523201",
       price: "$42.00",
       image: "/images/chair1.png",
     },
     {
+      id: 2,
       name: "Cantilever chair",
       code: "Y523201",
       price: "$42.00",
       image: "/images/chair2.png",
     },
     {
+      id: 3,
       name: "Cantilever chair",
       code: "Y523201",
       price: "$42.00",
       image: "/images/chair3.png",
     },
     {
+      id: 4,
       name: "Cantilever chair",
       code: "Y523201",
       price: "$42.00",
@@ -30,47 +37,65 @@ const FeaturedProducts = () => {
   ];
 
   return (
-    <section className="bg-purple-50 py-10 px-6 sm:px-8 lg:px-12">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-josifen font-bold text-center text-[#1A0B58] mb-8">
+    <section className="bg-white py-16">
+      <div className="container mx-auto px-4 sm:px-8 lg:px-16">
+        <h2 className="text-center text-3xl sm:text-4xl font-josifen font-bold text-[#1A0B5B] mb-12">
           Featured Products
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {products.map((product, index) => (
-            <div
-              key={index}
-              className="relative border rounded-xl p-4 bg-white shadow-md hover:shadow-lg transition duration-300"
-            >
-              <div className="w-full h-40 flex items-center justify-center overflow-hidden rounded-lg">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={160}
-                  height={160}
-                  className="object-contain w-full h-full"
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {products.map((product) => (
+            <div key={product.id} className="bg-white rounded-lg p-4 relative group overflow-hidden">
+              <div className="relative bg-[#F6F7FB] shadow">
+                {/* Replacing <img> with <Image /> for optimization */}
+                <Image 
+                  src={product.image} 
+                  alt={product.name} 
+                  width={500} 
+                  height={500} 
+                  className="w-full h-48 py-8 object-contain" 
+                  priority // Optionally, you can add priority for images above the fold
                 />
-              </div>
-              <div className="mt-4 text-center">
-                <h3 className="text-lg sm:text-xl font-lato font-semibold text-gray-800">
-                  {product.name}
-                </h3>
-                <p className="text-sm sm:text-md text-gray-500">{product.code}</p>
-                <p className="text-lg sm:text-xl font-lato font-bold text-gray-800 mt-2">
-                  {product.price}
-                </p>
-              </div>
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-purple-500 text-white opacity-0 hover:opacity-100 flex items-center justify-center rounded-xl transition duration-300">
-                <button className="py-2 px-4 bg-white text-purple-500 font-bold rounded-md shadow-md">
-                  View Details
-                </button>
+                <div className="bg-white py-7 px-4 w-full hover:bg-[#2F1AC4] group-hover:text-white text-center mt-4">
+                  <h3 className="text-lg font-lato font-semibold text-[#FB2E86] mb-1">{product.name}</h3>
+                  <p className="text-sm text-[#151875] mb-1">Code - {product.code}</p>
+                  <div className="flex justify-center space-x-2">
+                    <span className="w-4 h-1 bg-[#05E6B7] rounded-md"></span>
+                    <span className="w-4 h-1 bg-[#FB2E86] rounded-md"></span>
+                    <span className="w-4 h-1 bg-[#00009D] rounded-md"></span>
+                  </div>
+                  <p className="text-lg font-bold text-[#151875]">{product.price}</p>
+                  <Link href="/shop">
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center transition-all duration-300">
+                      <button className="bg-[#08D15F] text-white font-josifen font-medium text-sm px-4 py-2 rounded-lg mb-2">
+                        View Details
+                      </button>
+                      <div className="absolute top-4 left-4 flex space-x-2 inset-0  opacity-0 group-hover:opacity-100">
+                        <div>
+                          <ShoppingCartIcon className="w-6 h-6 text-[#3F509E]" />
+                        </div>
+                        <div>
+                          <HeartIcon className="ml-1 w-5 h-5 mb-2 text-[#1389FF]" />
+                        </div>
+                        <div className="-pt-20">
+                          <MagnifyingGlassIcon className="ml-1 w-5 h-5 text-[#1389FF]" />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
         </div>
+
+        <div className="flex justify-center mt-8 space-x-2">
+          <span className="w-6 h-2 bg-[#FB2E86] rounded-md"></span>
+          <span className="w-6 h-2 bg-[#e29fbc] rounded-md"></span>
+          <span className="w-6 h-2 bg-[#e29fbc] rounded-md"></span>
+          <span className="w-6 h-2 bg-[#e29fbc] rounded-md"></span>
+        </div>
       </div>
     </section>
   );
-};
-
-export default FeaturedProducts;
+}

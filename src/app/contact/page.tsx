@@ -11,7 +11,7 @@ function Contact() {
       {/* Header Section */}
       <div className="bg-gray-200 py-8">
         <div className="max-w-[1200px] mx-auto px-4">
-          <h1 className="text-3xl font-bold text-[#101750] mb-2">Contact Us</h1>
+          <h1 className="text-3xl font-bold font-josifen text-[#101750] mb-2">Contact Us</h1>
           <p className="text-sm text-black">
             Home <span className="text-black">.</span> Pages <span className="text-black">.</span>{" "}
             <span className="text-[#FB2E86]">Contact Us</span>
@@ -24,7 +24,7 @@ function Contact() {
         {/* Left Section */}
         <div className="flex-1">
           {/* Information About Us */}
-          <h2 className="text-2xl font-bold text-[#151875] mb-4">Information About Us</h2>
+          <h2 className="text-2xl font-bold font-josifen text-[#151875] mb-4">Information About Us</h2>
           <p className="text-gray-600 mb-6">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis neque ultrices mattis
             aliquam, malesuada diam est. Malesuada sem tristique amet erat vitae eget dolor
