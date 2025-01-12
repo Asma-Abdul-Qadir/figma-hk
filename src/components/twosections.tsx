@@ -19,7 +19,7 @@ export default function TwoSections() {
             
             <div className="relative h-full">
               <Image
-                src="/images/bluesofa.png"
+                src="/images/BlueSofa.png"
                 alt="B&B Italian Sofa"
                 width={600}
                 height={600}
